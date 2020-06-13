@@ -3,11 +3,10 @@ const https = require('https');
 const options = {
   'hostname': '{host}',
   'port': 8085,
-  'path': '/v1/firehose',
+  'path': '/v2/firehose/p/{tenant}/{namespace}/{topic}',
   'method': 'POST',
   'headers': {
     'Authorization': 'Bearer {JWT token}',
-    'TopicFn': 'persistent://{tenant}/{namespace}/{topic}',
   },
 };
 

@@ -3,13 +3,9 @@ const https = require('https');
 const options = {
   'hostname': '{host}',
   'port': 8085,
-  'path': '/v1/sse',
+  'path': '/v2/sse/p/{tenant}/{namespace}/{topic}?SubscriptionInitialPosition=earliest&SubscriptionName=fixed123&SubscriptionType=exclusive',
   'headers': {
     'Authorization': 'Bearer {JWT token}',
-    'TopicFn': 'persistent://{tenant}/{namespace}/{topic}',
-    'SubscriptionInitialPosition': 'earliest', // or latest
-    'SubscriptionName': 'fixed123', // optional
-    'SubscriptionType': 'exclusive', // optional
     'Accept': 'text/event-stream'
   },
 }
